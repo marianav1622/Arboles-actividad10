@@ -34,3 +34,13 @@ public void recorrerInorden(Nodo nodo) {
         if (nodo == null) return -1; 
         return 1 + Math.max(calcularAltura(nodo.izquierdo), calcularAltura(nodo.derecho));
     }
+// Método 2: Conteo de Hojas
+    public int contarHojas() {
+        return calcularHojas(raiz);
+    }
+
+    private int calcularHojas(Nodo nodo) {
+        if (nodo == null) return 0;
+        if (nodo.izquierdo == null && nodo.derecho == null) return 1;
+        return calcularHojas(nodo.izquierdo) + calcularHojas(nodo.derecho);
+    }
