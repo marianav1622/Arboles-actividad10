@@ -16,9 +16,18 @@ public static void main(String[] args) {
         System.out.println("\n=== MÉTRICAS Y TERMINOLOGÍA ===");
         System.out.println("Altura del árbol: " + arbol.getAltura());
         System.out.println("Cantidad de hojas: " + arbol.contarHojas());
-        System.out.println("\n=== RECORRIDO DEL ÁRBOL ===");
+        System.out.println("\n=== RECORRIDOS DEL ÁRBOL ===");
+        
+        System.out.print("Recorrido Preorden: ");
+        arbol.recorrerPreorden(arbol.raiz);
+        System.out.println();
+
         System.out.print("Recorrido Inorden: ");
         arbol.recorrerInorden(arbol.raiz);
+        System.out.println();
+
+        System.out.print("Recorrido Postorden: ");
+        arbol.recorrerPostorden(arbol.raiz);
         System.out.println();
     }
 }
