@@ -1,3 +1,4 @@
+public class maen {
 public static void main(String[] args) {
         ArbolBinario arbol = new ArbolBinario();
          // Inserción ordenada según las reglas del ABB
@@ -20,3 +21,5 @@ public static void main(String[] args) {
         arbol.recorrerInorden(arbol.raiz);
         System.out.println();
     }
+}
+
