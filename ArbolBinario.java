@@ -19,3 +19,10 @@ public class ArbolBinario {
         }
         return actual;
     }
+public void recorrerInorden(Nodo nodo) {
+        if (nodo != null) {
+            recorrerInorden(nodo.izquierdo);
+            System.out.print(nodo.valor + " ");
+            recorrerInorden(nodo.derecho);
+        }
+    }
