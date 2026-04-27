@@ -26,3 +26,11 @@ public void recorrerInorden(Nodo nodo) {
             recorrerInorden(nodo.derecho);
         }
     }
+    public int getAltura() {
+        return calcularAltura(raiz);
+    }
+
+    private int calcularAltura(Nodo nodo) {
+        if (nodo == null) return -1; 
+        return 1 + Math.max(calcularAltura(nodo.izquierdo), calcularAltura(nodo.derecho));
+    }
