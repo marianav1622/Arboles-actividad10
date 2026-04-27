@@ -44,3 +44,28 @@ public void recorrerInorden(Nodo nodo) {
         if (nodo.izquierdo == null && nodo.derecho == null) return 1;
         return calcularHojas(nodo.izquierdo) + calcularHojas(nodo.derecho);
     }
+public void mostrarArbol() {
+        mostrarArbolRecursivo(raiz, "", true);
+    }
+
+    private void mostrarArbolRecursivo(Nodo nodo, String prefijo, boolean esUltimo) {
+        if (nodo != null) {
+            System.out.print(prefijo);
+            System.out.print(esUltimo ? "└── " : "├── ");
+            String etiqueta = (nodo == raiz) ? " [Raíz]" : 
+                              (nodo.izquierdo == null && nodo.derecho == null) ? " [Hoja]" : " [Interno]";
+            System.out.println(nodo.valor + etiqueta);
+
+            String nuevoPrefijo = prefijo + (esUltimo ? "    " : "│   ");
+
+            if (nodo.izquierdo != null || nodo.derecho != null) {
+                if (nodo.izquierdo != null) {
+                    mostrarArbolRecursivo(nodo.izquierdo, nuevoPrefijo, nodo.derecho == null);
+                }
+                if (nodo.derecho != null) {
+                     mostrarArbolRecursivo(nodo.derecho, nuevoPrefijo, true);
+                }
+            }
+        }
+    }
+}
